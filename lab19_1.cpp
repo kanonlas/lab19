@@ -35,7 +35,7 @@ void importDataFromFile(string filename,vector<string> &name,vector<int> &scores
     }
 }
 
-void getCommand(string &c,string &k){
+void getCommand(string &comm,string &key){
     string cl;
     char ca[100];
     char ka[100];
@@ -43,21 +43,21 @@ void getCommand(string &c,string &k){
     cout<< "Please input your command: "; 
     getline(cin,cl);
     sscanf(cl.c_str(),format,ca,ka);
-    c=ca;
-    k=ka;
+    comm = ca;
+    key = ka;
 }
 
-void searchName(vector<string> n,vector<int> s,vector<char> g,string k){
+void searchName(vector<string> name,vector<int> scores,vector<char> grades,string key){
     cout<<"---------------------------------"<<endl;
     int x=-1;
-    for(unsigned int i=0;i<n.size();i++){
-        if(toUpperStr(n.at(i))==k){
+    for(unsigned int i=0;i<name.size();i++){
+        if(toUpperStr(name.at(i))==key){
             x=i;
         }
     }
     if(x!=-1){
-        cout<<n.at(x)<<"'s score = "<<s.at(x)<<endl;
-        cout<<n.at(x)<<"'s grade = "<<g.at(x)<<endl;
+        cout<<name.at(x)<<"'s score = "<<scores.at(x)<<endl;
+        cout<<name.at(x)<<"'s grade = "<<grades.at(x)<<endl;
         }else{
             cout<<"Cannot found.\n";
         }
